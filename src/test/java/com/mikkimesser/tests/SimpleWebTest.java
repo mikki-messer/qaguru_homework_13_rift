@@ -1,9 +1,8 @@
-package com.mikkimesser;
+package com.mikkimesser.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -24,19 +23,14 @@ TODO
 7. Добавить теги
 8. Добавить remote
 9. Добавить аттачи
-10. Сгенерировать проект на autotests.cloud
-11. Уведомления в телегу
-12. Дженкинс настроить
-13. Readme.md
+10. Owner
+11. Сгенерировать проект на autotests.cloud
+12. Уведомления в телегу
+13. Дженкинс настроить
+14. Readme.md
  */
 
-public class SimpleWebTest {
-    @Test
-    @BeforeAll
-    public static void setUp() {
-        Configuration.browserSize = "1280x800";
-        Configuration.holdBrowserOpen = true;
-    }
+public class SimpleWebTest extends TestBase {
 
     @Test
     @DisplayName("Базовая проверка льва")
@@ -49,7 +43,7 @@ public class SimpleWebTest {
     @Test
     @DisplayName("Закрыть льва")
     public void closeLionTest() {
-        Selenide.open("https://www.redrift.com/");
+        Selenide.open("/");
         $(byText("Success rate")).scrollTo();
         $(".btn-close").click();
         $(".leon__message").shouldNotBe(Condition.visible);
@@ -58,7 +52,7 @@ public class SimpleWebTest {
     @Test
     @DisplayName("Проверка ссылки News")
     public void checkTest() {
-        Selenide.open("https://www.redrift.com/");
+        Selenide.open("/");
         $(byLinkText("news")).scrollTo().click();
         $(".page-inner__title").shouldHave(text("Blog & News"));
     }
@@ -66,16 +60,15 @@ public class SimpleWebTest {
     @Test
     @DisplayName("Проверка ссылки Join our team")
     public void checkJobsTest() {
-        Selenide.open("https://www.redrift.com/");
+        Selenide.open("/");
         $(byLinkText("join our team!")).scrollTo().click();
         $(".page-inner__title").shouldHave(text("Red Rift Awaits You Stranger"));
     }
 
-    //team-swiper__slide swiper-slide
     @Test
     @DisplayName("Появления Social Card")
     public void checkSocialCardTest() {
-        Selenide.open("https://www.redrift.com/");
+        Selenide.open("/");
         $(byText("Who We")).scrollTo();
         $(".worker-social-list").shouldNotBe(visible);
         $(".worker-card__description-name").shouldHave(text("Denis P."));
