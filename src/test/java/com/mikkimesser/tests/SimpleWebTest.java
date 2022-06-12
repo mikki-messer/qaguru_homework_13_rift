@@ -14,11 +14,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 /*
 TODO
-1. Сделать TestBase класс
-2. Сделать PageObject класс
+1. Сделать TestBase класс +
+2. Сделать PageObject класс +
 3. Расписать атомарные методы
 4. Создать логические методы (если возможно)
-5. Добавить аллюр
+5. Добавить аллюр +
 6. Добавить аллюр лиснер + степы
 7. Добавить теги
 8. Добавить remote
@@ -33,15 +33,16 @@ TODO
 public class SimpleWebTest extends TestBase {
 
     @Test
-    @DisplayName("Базовая проверка льва")
+    @DisplayName("Проверка, что при скролле к словам Success rate появляется виджет в виде льва")
     public void showLionTest() {
-        Selenide.open("https://www.redrift.com/");
+        Selenide.open("/");
+        $(".leon__message").shouldNotBe(Condition.visible);
         $(byText("Success rate")).scrollTo();
         $(".leon__message").shouldBe(Condition.visible);
     }
 
     @Test
-    @DisplayName("Закрыть льва")
+    @DisplayName("Проверка закрытия виджета льва")
     public void closeLionTest() {
         Selenide.open("/");
         $(byText("Success rate")).scrollTo();
@@ -51,23 +52,23 @@ public class SimpleWebTest extends TestBase {
 
     @Test
     @DisplayName("Проверка ссылки News")
-    public void checkTest() {
+    public void newsLinkTest() {
         Selenide.open("/");
-        $(byLinkText("news")).scrollTo().click();
+        $(byLinkText("news")).click();
         $(".page-inner__title").shouldHave(text("Blog & News"));
     }
 
     @Test
     @DisplayName("Проверка ссылки Join our team")
-    public void checkJobsTest() {
+    public void jobsLinkTest() {
         Selenide.open("/");
-        $(byLinkText("join our team!")).scrollTo().click();
+        $(byLinkText("join our team!")).click();
         $(".page-inner__title").shouldHave(text("Red Rift Awaits You Stranger"));
     }
 
     @Test
-    @DisplayName("Появления Social Card")
-    public void checkSocialCardTest() {
+    @DisplayName("Проверка появления всплывающей визитки c контактами CEO")
+    public void showCEOContactsTest() {
         Selenide.open("/");
         $(byText("Who We")).scrollTo();
         $(".worker-social-list").shouldNotBe(visible);
