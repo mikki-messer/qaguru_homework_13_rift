@@ -1,9 +1,11 @@
 package com.mikkimesser.tests;
 
 import com.codeborne.selenide.Configuration;
-//import com.mikkimesser.configuration.CredentialConfig;
+import com.mikkimesser.configuration.CredentialsConfig;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.mikkimesser.helpers.Attach;
 import io.qameta.allure.Step;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,29 +22,26 @@ public class TestBase {
     @BeforeAll
     @Step("Предварительная настройка")
     public static void setUp() {
-        /* TODO: раскоментировать после добавки файла с креденшлс
-        CredentialConfig credentialConfig = ConfigFactory.create(CredentialConfig.class);
-        String selenoidLogin = credentialConfig.login();
-        String selenoidPassword = credentialConfig.password();
+        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+        String selenoidLogin = credentialsConfig.login();
+        String selenoidPassword = credentialsConfig.password();
 
-        String selenoidURL = System.getProperty("selenoidURL");
-        System.out.println(selenoidURL);
+        String selenoidURL = System.getProperty("selenoidURL", "selenoid.autotests.cloud");
         String selenoidConnectionString = String.format("https://%s:%s@%s/wd/hub",
                 selenoidLogin,
                 selenoidPassword,
                 selenoidURL);
 
         Configuration.remote = selenoidConnectionString;
-         */
+
         Configuration.baseUrl = "https://www.redrift.com";
         Configuration.browserSize = "1280x720";
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        /* TODO: раскомментировать, после перехода на селеноид
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-         */
     }
 
     @AfterEach

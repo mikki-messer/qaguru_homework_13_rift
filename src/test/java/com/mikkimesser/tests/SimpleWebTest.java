@@ -3,7 +3,9 @@ package com.mikkimesser.tests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.mikkimesser.pages.RedRiftMainPage;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,21 +22,21 @@ TODO
 3. Расписать атомарные методы +
 4. Создать логические методы (если возможно) +
 5. Добавить аллюр +
-6. Добавить аллюр лиснер + степы
-7. Добавить теги
+6. Добавить аллюр лиснер + степы +
+7. Добавить теги -
 8. Добавить remote
-9. Добавить аттачи
+9. Добавить аттачи +
 10. Owner
 11. Сгенерировать проект на autotests.cloud
-12. Уведомления в телегу
-13. Дженкинс настроить
+12. Дженкинс настроить
+13. Уведомления в телегу без jar
 14. Readme.md
  */
 
 public class SimpleWebTest extends TestBase {
 
     @Test
-    @DisplayName("Проверка, что при скролле к словам Success rate появляется виджет в виде льва")
+    @DisplayName("Check if the lion widget appears on scrolling to the Success rate block")
     public void showLionTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
@@ -44,7 +46,7 @@ public class SimpleWebTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка закрытия виджета льва")
+    @DisplayName("Check closing of the lion widget")
     public void closeLionTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
@@ -55,7 +57,7 @@ public class SimpleWebTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка ссылки News")
+    @DisplayName("Check the News link")
     public void newsLinkTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
@@ -64,7 +66,7 @@ public class SimpleWebTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка ссылки Join our team")
+    @DisplayName("Check the Join our team link")
     public void jobsLinkTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
@@ -73,18 +75,17 @@ public class SimpleWebTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка появления всплывающей визитки c контактами CEO")
+    @DisplayName("Check display of the contact card for the first contace")
     public void showCEOContactsTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
         redRiftMainPage.scrollToContactsBlock();
         redRiftMainPage.checkContactInfoCardIsNotVisible();
+        redRiftMainPage.checkFirstContactName();
         redRiftMainPage.hoverOnContactCard();
         redRiftMainPage.checkContactInfoCardIsVisible();
         redRiftMainPage.checkContactsFirstLink();
         redRiftMainPage.checkContactsSecondLink();
     }
-
-
 }
 
