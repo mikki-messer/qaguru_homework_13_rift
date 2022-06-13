@@ -80,6 +80,10 @@ public class RedRiftMainPage {
         contactInfoCard.shouldNotBe(Condition.visible);
     }
 
+    public void checkContactInfoCardIsVisible() {
+        contactInfoCard.shouldBe(Condition.visible);
+    }
+
     public void checkFirstContactName() {
         contactName.shouldHave(Condition.text(ceoName));
     }
