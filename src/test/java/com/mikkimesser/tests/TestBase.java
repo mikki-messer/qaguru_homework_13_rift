@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
 
     @BeforeAll
-    @Step("Предварительная настройка")
+    @Step("Preliminary setup")
     public static void setUp() {
         CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
         String selenoidLogin = credentialsConfig.login();
@@ -45,7 +45,7 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Сохранение скриншота, видео, исходного кода и логов консоли")
+    @Step("Saving screenshot, video, page source, and console logs")
     void addAttachments() {
         String screenshotName;                                // Returns a `String`.
         screenshotName = String.format("Screenshot %s",ZonedDateTime                    // Represent a moment as perceived in the wall-clock time used by the people of a particular region ( a time zone).

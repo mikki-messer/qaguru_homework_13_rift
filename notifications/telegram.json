@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "${JOB_BASE_NAME}",
+    "environment": "qa.guru Jenkins",
+    "comment": "RedReft.com main page simple tests",
+    "reportLink": "${BUILD_URL}",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5469810310:AAHctc3ZESiwx-5VnxFARuNmR64fZW_OBEM",
+    "chat": "159696368",
+    "replyTo": ""
+  }
+}
