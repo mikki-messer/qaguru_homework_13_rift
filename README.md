@@ -3,7 +3,16 @@
 
 ## :rescue_worker_helmet: Contents
 
+- <a href="#rescue_worker_helmet-coverage">Coverage</a>
 - <a href="#rescue_worker_helmet-technology-stack">Technology stack</a>
+
+## :rescue_worker_helmet: Coverage
+
+- Check that the "Join our team" link opens the "Jobs" page
+- Check that the "News" link opens the "Blog & News" page
+- Check that on scrolling down to the "100% Success Rate" block the lion widget appears
+- Check that the lion widget disappears after the click on the close button
+- Check that the contact card with links to the Facebook and LinkedIn appears on mouse hover over the first contact in the "Team block"
 
 ## :rescue_worker_helmet: Technology stack
 <p align="center">
