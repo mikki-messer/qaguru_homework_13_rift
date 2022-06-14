@@ -49,7 +49,7 @@ test
 
 Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the login and password to the Selenoid
 
-Credentials.properties example, put your real login and password there
+#### Credentials.properties example, put your real login and password there
 ```
 login=myAwesomeLogin
 password=mySecurePassword
