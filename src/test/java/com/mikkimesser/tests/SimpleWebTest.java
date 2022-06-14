@@ -46,7 +46,7 @@ public class SimpleWebTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Check display of the contact card for the first contace")
+    @DisplayName("Check display of the contact card for the first contact")
     public void showCEOContactsTest() {
         RedRiftMainPage redRiftMainPage = new RedRiftMainPage();
         redRiftMainPage.openPage();
