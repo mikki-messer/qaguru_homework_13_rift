@@ -1,5 +1,5 @@
-#Automated tests for the RedRift.com main page
-##<a href = "https://redrift.com" target ="_blank">redrift.com</a>
+# Automated tests for the RedRift.com main page
+## <a href = "https://redrift.com" target ="_blank">redrift.com</a>
 
 ## :rescue_worker_helmet: Contents
 
