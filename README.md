@@ -46,6 +46,7 @@ test
 ```
 ### Jenkins build params
 - selenoidURL - the URL of the Selenoid instance to run tests on, default value: `selenoid.autotests.cloud`
+
 Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the login and password to the Selenoid
 Credentials.properties example, put your real login and password there
 ```
