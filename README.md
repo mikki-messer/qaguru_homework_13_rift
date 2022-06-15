@@ -48,7 +48,7 @@ Default params
 
 - browser: chrome
 - browser size: 1280x800
-- remoteURL: selenoid.autotests.cloud)
+- remoteURL: selenoid.autotests.cloud
 
 ```
 gradle clean test
