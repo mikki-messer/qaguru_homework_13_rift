@@ -42,10 +42,14 @@
 
 ### How to launch on the local machine
 
-Default params 
-browser: Chrome
-browser size: 1280x800
-remoteURL: selenoid.autotests.cloud)
+<p>
+Default params
+</p>
+
+- browser: Chrome
+- browser size: 1280x800
+- remoteURL: selenoid.autotests.cloud)
+
 ```
 gradle clean test
 ```
@@ -68,6 +72,8 @@ test
 ### Jenkins build params
 
 - selenoidURL - the URL of the Selenoid instance to run tests on, default value: `selenoid.autotests.cloud`
+- browser - the browser, chrome, firefox, and opera are supported, default value: `chrome`
+- browserSize - the size of the browser window in AAAAxBBBB format, default value: `1280x800`
 
 Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the
 login and password to the Selenoid
