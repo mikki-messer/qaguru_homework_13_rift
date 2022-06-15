@@ -46,7 +46,7 @@
 Default params
 </p>
 
-- browser: Chrome
+- browser: chrome
 - browser size: 1280x800
 - remoteURL: selenoid.autotests.cloud)
 
