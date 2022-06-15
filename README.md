@@ -75,7 +75,7 @@ test
 - browser - the browser, chrome, firefox, and opera are supported, default value: `chrome`
 - browserSize - the size of the browser window in AAAAxBBBB format, default value: `1280x800`
 
-Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the
+> Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the
 login and password to the Selenoid
 
 #### Credentials.properties example, put your real login and password there
@@ -107,7 +107,7 @@ password=mySecurePassword
 <img title="Allure reports Test suites tab screenshot" src="images/screenshots/allure-redrift-reports-tests.png">
 </p>
 
-> Please note, saving browser console logs is not supported for Firefox!!!
+> Please note, saving browser console logs to Allure reports is not supported for Firefox!!!
 
 ## :rescue_worker_helmet: Telegram Notification
 
