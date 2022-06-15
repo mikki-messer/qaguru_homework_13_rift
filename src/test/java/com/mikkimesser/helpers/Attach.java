@@ -1,5 +1,6 @@
 package com.mikkimesser.helpers;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Allure;
@@ -11,6 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -32,6 +34,13 @@ public class Attach {
     }
 
     public static void browserConsoleLogs() {
+        //Mike 2022-06-15
+        //FireFox driver doesn't support saving console logs
+        System.out.println(Configuration.browser);
+
+        if (Objects.equals(Configuration.browser, "firefox"))
+            return;
+
         attachAsText(
                 "Browser console logs",
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))

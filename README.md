@@ -42,8 +42,17 @@
 
 ### How to launch on the local machine
 
+Default params 
+browser: Chrome
+browser size: 1280x800
+remoteURL: selenoid.autotests.cloud)
 ```
 gradle clean test
+```
+
+Arbitrary params
+```
+gradle clean test -DselenoidURL="yourAwesomeURL" -Dbrowser="yourPreciousBrowser" -DbrowserSize="AAAAxBBBB"
 ```
 
 ### How to launch remotely on Jenkins
@@ -52,6 +61,8 @@ gradle clean test
 clean
 test
 -DselenoidURL=${SELENOID_URL}
+-Dbrowser=${BROWSER}
+-DbrowserSize=${BROWSER_SIZE}
 ```
 
 ### Jenkins build params
@@ -89,6 +100,8 @@ password=mySecurePassword
 <p align="center">
 <img title="Allure reports Test suites tab screenshot" src="images/screenshots/allure-redrift-reports-tests.png">
 </p>
+
+> Please note, saving browser console logs is not supported for Firefox!!!
 
 ## :rescue_worker_helmet: Telegram Notification
 

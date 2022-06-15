@@ -35,7 +35,9 @@ public class TestBase {
         Configuration.remote = selenoidConnectionString;
 
         Configuration.baseUrl = "https://www.redrift.com";
-        Configuration.browserSize = "1280x720";
+        Configuration.browserSize = System.getProperty("browserSize", "1280x800");
+        Configuration.browser = System.getProperty("browser", "chrome");
+
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -45,7 +47,7 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Saving screenshot, video, page source, and console logs")
+    @Step("Saving screenshot, video, page source, and console logs (except of FireFox)")
     void addAttachments() {
         String screenshotName;                                // Returns a `String`.
         screenshotName = String.format("Screenshot %s",ZonedDateTime                    // Represent a moment as perceived in the wall-clock time used by the people of a particular region ( a time zone).
