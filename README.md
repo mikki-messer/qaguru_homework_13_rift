@@ -1,4 +1,5 @@
 # Automated tests for the RedRift.com main page
+
 ## <a href = "https://redrift.com" target ="_blank">redrift.com</a>
 
 ## :rescue_worker_helmet: Contents
@@ -6,6 +7,12 @@
 - <a href="#rescue_worker_helmet-coverage">Coverage</a>
 - <a href="#rescue_worker_helmet-technology-stack">Technology stack</a>
 - <a href="#rescue_worker_helmet-how-to-launch-from-the-command-line">How to launch from the command line</a>
+- <a href="#rescue_worker_helmet-jenkins-build-example">Jenkins build example</a>
+- <a href="#rescue_worker_helmet-allure-reports-integration">Allure reports integration</a>
+- <a href="#rescue_worker_helmet-telegram-Notification">Telegram Notification</a>
+- <a href="#rescue_worker_helmet-selenoid-launch-example">Selenoid launch example</a>
+
+##  
 
 ## :rescue_worker_helmet: Coverage
 
@@ -13,7 +20,8 @@
 - Check that the "News" link opens the "Blog & News" page
 - Check that on scrolling down to the "100% Success Rate" block the lion widget appears
 - Check that the lion widget disappears after the click on the close button
-- Check that the contact card with links to the Facebook and LinkedIn appears on mouse hover over the first contact in the "Team block"
+- Check that the contact card with links to the Facebook and LinkedIn appears on mouse hover over the first contact in
+  the "Team block"
 
 ## :rescue_worker_helmet: Technology stack
 
@@ -39,18 +47,60 @@ gradle clean test
 ```
 
 ### How to launch remotely on Jenkins
+
 ```
 clean
 test
 -DselenoidURL=${SELENOID_URL}
 ```
+
 ### Jenkins build params
+
 - selenoidURL - the URL of the Selenoid instance to run tests on, default value: `selenoid.autotests.cloud`
 
-Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the login and password to the Selenoid
+Don't forget to create the `credentials.properties` file in the `src/test/resources/configuration/` folder with the
+login and password to the Selenoid
 
 #### Credentials.properties example, put your real login and password there
+
 ```
 login=myAwesomeLogin
 password=mySecurePassword
 ```
+
+## :rescue_worker_helmet: Jenkins build example
+
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/C12-Mike-B-lesson-13-redrift.com/">Jenkins build</a>
+
+<p align="center">
+<img title="Jenkins Dashboard" src="images/screenshots/jenkins-redrift-build-main-page.png">
+</p>
+
+## :rescue_worker_helmet: Allure reports integration
+
+### Overview
+
+<p align="center">
+<img title="Allure reports Overview tab screenshot" src="images/screenshots/allure-reports-redrift-main-page.png">
+</p>
+
+### Test Suites
+
+<p align="center">
+<img title="Allure reports Test suites tab screenshot" src="images/screenshots/allure-redrift-reports-tests.png">
+</p>
+
+## :rescue_worker_helmet: Telegram Notification
+
+<p align="center">
+<img title="Telegram notification screenshot" src="images/screenshots/telegram-redrift-tests-notification.png">
+</p>
+
+## :rescue_worker: Selenoid launch example
+
+There is a video for each test demonstrating the flow.
+
+<p align="center">
+<img title="Selenoid Video" src="images/gifs/closing-the-lion.gif">
+</p>
+
