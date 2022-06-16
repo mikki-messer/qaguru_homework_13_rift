@@ -109,7 +109,9 @@ password=mySecurePassword
 
 > Please note, saving browser console logs to Allure reports is not supported for Firefox!!!
 
-## :rescue_worker_helmet: Telegram Notification
+## :rescue_worker_helmet: Telegram Notification example
+
+> <a href="https://github.com/qa-guru/allure-notifications">qa-guru/allure-notifications</a> is used
 
 <p align="center">
 <img title="Telegram notification screenshot" src="images/screenshots/telegram-redrift-tests-notification.png">
